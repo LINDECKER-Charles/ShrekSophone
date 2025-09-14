@@ -14,9 +14,8 @@ Parce que… pourquoi pas ?
 
 ```
 shrek-sophone/
-├── index.html   # La page principale
-├── style.css    # Le style pour mettre Shrek en valeur
-└── script.js    # La magie pour lancer la musique et les animations
+├── index.html   # La page
+└── shrek.mp4    # SHREK
 ```
 
 ## 🚀 Installation
