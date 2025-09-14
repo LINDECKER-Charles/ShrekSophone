@@ -24,7 +24,7 @@ Aucune dépendance. Aucune config.
 Télécharge, double-clique, et admire Shrek.
 
 ```bash
-git clone https://github.com/ton-compte/shrek-sophone.git
+git clone https://github.com/LINDECKER-Charles/ShrekSophone.git
 cd ShrekSophone
 open index.html
 ```
