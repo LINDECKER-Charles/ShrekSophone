@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Retour Dolibarr</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      display: none; /* invisible au départ */
+    }
+#btn {
+  background: #0066cc;
+  border: 1px solid #004c99;
+  border-radius: 3px;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+#btn:hover {
+  background: #004c99;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Vidéo cachée -->
+  <video id="shrek" autoplay loop muted playsinline>
+    <source src="shrek.mp4" type="video/mp4">
+  </video>
+
+  <!-- Bouton appât -->
+  <button id="btn" class="butAction">Votre Texte</button>
+
+  <script>
+    const vid = document.getElementById("shrek");
+    const btn = document.getElementById("btn");
+
+    // Saut direct à 10s
+    vid.addEventListener("loadedmetadata", () => {
+      vid.currentTime = 10;
+    });
+
+    btn.addEventListener("click", () => {
+      // Révéler la vidéo et enlever le bouton
+      vid.style.display = "block";
+      btn.style.display = "none";
+
+      // Débloquer le son + volume max
+      vid.muted = false;
+      vid.volume = 1.0;
+      vid.play();
+
+      // Fullscreen réel
+      if (vid.requestFullscreen) {
+        vid.requestFullscreen();
+      }
+    });
+  </script>
+</body>
+</html>
