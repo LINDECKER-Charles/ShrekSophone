@@ -28,6 +28,21 @@ jobs:
       - name: Run ESLint on JS files
         run: eslint . --ext .js
 
+      - name: Install esbuild
+        run: npm install -g esbuild
+
+      - name: Build & Minify JS
+        run: |
+          mkdir -p dist
+          esbuild src/shrek.js --bundle --minify --outfile=dist/shrek.min.js --format=iife
+          esbuild src/shrek-all.js --bundle --minify --outfile=dist/shrek-all.min.js --format=iife
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: shrek-build
+          path: dist/
+  
   merge-to-main:
     runs-on: ubuntu-latest
     needs: lint-and-test
@@ -35,11 +50,30 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-
-      - name: Merge dev into main
-        uses: devmasx/merge-branch@v1.4.0
         with:
-          type: now
-          from_branch: dev
-          target_branch: main
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0   # ramener tout l’historique + branches
+
+      - name: Switch to main
+        run: |
+          git fetch origin main
+          git checkout main
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: shrek-build
+          path: dist/
+
+      - name: Merge dev into main and commit artifacts
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+
+          # Merge dev dans main
+          git merge origin/dev --no-ff --no-edit
+
+          # Ajouter les artefacts
+          cp -r dist/* .
+          git add .
+          git commit -m "chore(build): add compiled JS" || echo "No new artifacts"
+          git push origin main
