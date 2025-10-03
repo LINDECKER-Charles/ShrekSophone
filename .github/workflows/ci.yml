@@ -50,6 +50,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0   # important : ramener tout l’historique + branches
 
       - name: Download build artifact
         uses: actions/download-artifact@v4
@@ -57,13 +59,20 @@ jobs:
           name: shrek-build
           path: dist/
 
-      - name: Commit build artifacts to main
+      - name: Merge dev into main and commit artifacts
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
-          git fetch --all
+
+          # Assure-toi d’avoir main
+          git fetch origin main
           git checkout main
+
+          # Merge dev dans main
+          git merge origin/dev --no-ff --no-edit
+
+          # Ajouter les artefacts au merge
           cp -r dist/* .
           git add .
-          git commit -m "chore(build): add compiled JS" || echo "No changes"
+          git commit -m "chore(build): add compiled JS" || echo "No new artifacts"
           git push origin main
