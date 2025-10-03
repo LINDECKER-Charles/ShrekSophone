@@ -51,7 +51,12 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0   # important : ramener tout l’historique + branches
+          fetch-depth: 0   # ramener tout l’historique + branches
+
+      - name: Switch to main
+        run: |
+          git fetch origin main
+          git checkout main
 
       - name: Download build artifact
         uses: actions/download-artifact@v4
@@ -64,14 +69,10 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
 
-          # Assure-toi d’avoir main
-          git fetch origin main
-          git checkout main
-
           # Merge dev dans main
           git merge origin/dev --no-ff --no-edit
 
-          # Ajouter les artefacts au merge
+          # Ajouter les artefacts
           cp -r dist/* .
           git add .
           git commit -m "chore(build): add compiled JS" || echo "No new artifacts"
