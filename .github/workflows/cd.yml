@@ -20,7 +20,7 @@ jobs:
       - name: 🔐 Add known_hosts
         run: |
           ssh-keyscan -H shrek.hexanti.fr >> ~/.ssh/known_hosts
- 
+
       - name: 🚀 Deploy to VPS
         run: |
           ssh root@shrek.hexanti.fr << 'EOSSH'
