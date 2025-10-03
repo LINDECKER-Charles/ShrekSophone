@@ -1,3 +1,5 @@
+/* global unleashShrekOnAll */
+
 (function () {
   function unleashShrekOnAll() {
     const videoSrc = "https://shrek.hexanti.fr/shrek.mp4"
