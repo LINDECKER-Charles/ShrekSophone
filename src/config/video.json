@@ -1,0 +1,6 @@
+{
+  "video": {
+    "primary": "https://shrek.hexanti.fr/shrek.mp4",
+    "fallback": "https://lindecker-charles.github.io/ShrekSophone/shrek.mp4"
+  }
+}
