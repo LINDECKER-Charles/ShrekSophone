@@ -19,11 +19,11 @@ jobs:
 
       - name: 🔐 Add known_hosts
         run: |
-          ssh-keyscan -H shrek.hexanti.fr >> ~/.ssh/known_hosts
+          ssh-keyscan -H league-of-data-base.fr >> ~/.ssh/known_hosts
 
       - name: 🚀 Deploy to VPS
         run: |
-          ssh root@shrek.hexanti.fr << 'EOSSH'
+          ssh root@league-of-data-base.fr << 'EOSSH'
             set -e
             cd ${{ secrets.PATH_PROD }}
             git fetch origin main
