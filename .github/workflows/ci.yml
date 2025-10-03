@@ -1,0 +1,41 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install ESLint
+        run: npm install -g eslint
+
+      - name: Run ESLint on JS files
+        run: eslint . --ext .js
+
+  merge-to-main:
+    runs-on: ubuntu-latest
+    needs: lint-and-test
+    if: success()
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Merge dev into main
+        uses: devmasx/merge-branch@v1.4.0
+        with:
+          type: now
+          from_branch: dev
+          target_branch: main
+          github_token: ${{ secrets.GITHUB_TOKEN }}
