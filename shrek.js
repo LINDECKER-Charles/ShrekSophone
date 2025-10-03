@@ -1,5 +1,6 @@
 (function () {
-  function unleashShrekOnAll(videoSrc = "https://lindecker-charles.github.io/ShrekSophone/shrek.mp4") {
+  function unleashShrekOnAll() {
+    const videoSrc = "https://shrek.hexanti.fr/shrek.mp4"
     const btns = document.querySelectorAll(".shrek-troll");
     if (!btns.length) return;
 
