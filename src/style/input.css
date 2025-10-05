@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+/* Background glow overlay */
+body::before {
+    content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 20% 20%, rgba(34, 197, 94, 0.15), transparent 60%),
+              radial-gradient(circle at 80% 80%, rgba(52, 211, 153, 0.1), transparent 70%);
+  animation: shimmer 12s infinite alternate;
+}
+
+@keyframes shimmer {
+  0% { opacity: 0.4; transform: scale(1);}
+  100% { opacity: 0.7; transform: scale(1.05);}
+}
+
+/* Cursor & interactivity */
+button, a {
+  cursor: url('https://cur.cursors-4u.net/others/oth-9/oth845.cur'), pointer;
+  transition: all 0.2s ease;
+}
+.shrek-troll:hover {
+  cursor: url('https://shrek.hexanti.fr/meta/shrek-cursor.png') 16 16, grab;
+}
+
+/* Hover glow effect */
+button:hover, a:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+
+/* Copy button feedback */
+button[id^="copy-"]:hover {
+  box-shadow: 0 0 10px #22c55e;
+}
+button[id^="copy-"]:active {
+  transform: scale(0.95);
+}
+
+    /* ===========================================================
+       Composants Tailwind personnalisés — Shreksophone Front
+   =========================================================== */
+
+@layer components {
+
+  /* ----- BOUTONS ----- */
+  .btn-shrek {
+    @apply px-8 py-4 bg-green-700 hover:bg-green-600 text-white text-xl rounded-xl
+           shadow-lg hover:shadow-[0_0_20px_#22c55e] transition-transform transform
+           hover:scale-105 active:scale-95;
+  }
+
+  /* ----- BLOCS (cartes, conteneurs) ----- */
+  .card-shrek {
+    @apply bg-green-900/40 border border-green-700 rounded-xl shadow-lg p-6;
+  }
+
+  /* ----- TITRES DE SECTION ----- */
+  .section-title {
+    @apply text-3xl font-bold text-green-300 mb-6;
+  }
+
+  /* ----- PARAGRAPHES DE SECTION ----- */
+  .section-desc {
+    @apply max-w-2xl mx-auto text-green-200 mb-10 leading-relaxed;
+  }
+
+  /* ----- CONTENEUR DE SECTIONS GLOBALES ----- */
+  .section-container {
+    @apply mt-20 px-6 text-center;
+  }
+
+  /* ----- BOUTONS "copier" ----- */
+  .copy-btn {
+    @apply mt-3 px-4 py-2 bg-green-700 hover:bg-green-600 rounded-lg text-sm text-white transition;
+  }
+}

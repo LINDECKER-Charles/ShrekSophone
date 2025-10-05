@@ -11,5 +11,7 @@ export function loadvideo(){
     vid.style.height = "100%";
     vid.style.objectFit = "cover";
     vid.style.zIndex = 9999;
+    vid.muted = true;
+    vid.volume = 0;
     return vid;
 }
