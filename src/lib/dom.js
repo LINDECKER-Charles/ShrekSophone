@@ -23,3 +23,14 @@ export function setAllLink(links, vid){
       });
     });
 }
+
+export function cleanLink(links) {
+  links.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation(); 
+      link.removeAttribute("href"); 
+      link.onclick = null; 
+    });
+  });
+}
