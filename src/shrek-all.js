@@ -17,4 +17,4 @@ import { getLinks, setAllLink, cleanLink } from './lib/dom.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   unleashShrekOnAll();
-});
+}); 
