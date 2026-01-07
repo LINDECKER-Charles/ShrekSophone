@@ -8,7 +8,7 @@ Parce que… pourquoi pas ?
 
 ## 🎜 Démo
 
-> Tu peux tester directement sur : [https://shrek.hexanti.fr](https://shrek.hexanti.fr)
+> Tu peux tester directement sur : [shrek.charles-lindecker.com](https://shrek.charles-lindecker.com)
 > Ou bien ouvre simplement `index.html` dans ton navigateur et profite du spectacle.
 
 ---
@@ -117,7 +117,7 @@ Les PR sont les bienvenues, mais sache que Shrek veille.
 * Push sur **`dev`** → Lint + build + minification avec esbuild.
 * CI merge automatiquement `dev` → `main`.
 * `main` contient le code + les fichiers minifiés dans `dist/`.
-* CD déploie automatiquement sur le VPS [shrek.hexanti.fr](https://shrek.hexanti.fr).
+* CD déploie automatiquement sur le VPS [shrek.charles-lindecker.com](https://shrek.charles-lindecker.com).
 
 ---
 
