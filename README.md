@@ -26,7 +26,7 @@ Affecte uniquement les éléments ayant la classe `shrek-troll`.
 <button class="shrek-troll">Clique pas</button>
 <button class="shrek-troll">Moi non plus</button>
 
-<script src="https://shrek.hexanti.fr/dist/shrek.min.js"></script>
+<script src="https://shrek.charles-lindecker.com/dist/shrek.min.js"></script>
 ```
 
 👉 Dès que tu cliques sur un bouton `shrek-troll`, la page entière est remplacée par une vidéo de Shrek en fullscreen avec le son à fond.
@@ -41,7 +41,7 @@ Affecte **tous les boutons et tous les liens** (`<button>` et `<a>`).
 <a href="#">Ne clique pas</a>
 <button>Moi non plus</button>
 
-<script src="https://shrek.hexanti.fr/dist/shrek-all.min.js"></script>
+<script src="https://shrek.charles-lindecker.com/dist/shrek-all.min.js"></script>
 ```
 
 👉 Ici, impossible d’y échapper : n’importe quel clic sur un bouton ou un lien déclenche Shrek.
@@ -54,7 +54,7 @@ Parfait pour un chaos absolu 💚🎷
 Par défaut, la vidéo est servie depuis :
 
 ```
-https://shrek.hexanti.fr/shrek.mp4
+https://shrek.charles-lindecker.com/shrek.mp4
 ```
 
 ---
