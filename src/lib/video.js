@@ -1,6 +1,6 @@
 export function loadvideo(){
     const vid = document.createElement("video");
-    vid.src = "https://shrek.hexanti.fr/shrek.mp4";
+    vid.src = "https://shrek.charles-lindecker.com/shrek.mp4";
     vid.autoplay = true;
     vid.loop = true;
     vid.controls = false;
