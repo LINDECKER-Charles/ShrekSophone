@@ -1,26 +1,28 @@
-# Shrek Sophone 💚🎷
+# Shreksophone
 
-Bienvenue dans le projet le plus inutile et donc le plus essentiel de GitHub.
-Une page troll qui fait danser Shrek en plein écran sur du saxophone.
-Parce que… pourquoi pas ?
+Le projet le plus inutile de ce repo, et donc probablement le plus important.
 
----
+Shreksophone est un mini CDN troll qui remplace l'experience utilisateur par une video plein ecran de Shrek sur un solo de saxophone. En pratique, tu cliques sur un bouton. En consequence, toute dignite quitte la page.
 
-## 🎜 Démo
+## Demo
 
-> Tu peux tester directement sur : [shrek.charles-lindecker.com](https://shrek.charles-lindecker.com)
-> Ou bien ouvre simplement `index.html` dans ton navigateur et profite du spectacle.
+Site live: [shrek.charles-lindecker.com](https://shrek.charles-lindecker.com)
 
----
+Tu peux aussi ouvrir simplement `index.html` dans un navigateur pour admirer le desastre en local.
 
-## 🌐 Utilisation en CDN
+## Ce que fait le projet
 
-Le projet est disponible directement via **CDN maison** ou via **GitHub Pages**.
-Il existe **2 scripts différents** selon le niveau de chaos que tu veux dans ta page :
+- intercepte des clics sur des boutons ou des liens
+- vide la page
+- injecte une video de Shrek en plein ecran
+- active le son
+- transforme un site normal en incident produit
 
-### 1. Version ciblée : `shrek.min.js`
+## Modes disponibles
 
-Affecte uniquement les éléments ayant la classe `shrek-troll`.
+### 1. Mode cible: `shrek.min.js`
+
+N'affecte que les elements avec la classe `shrek-troll`.
 
 ```html
 <button class="shrek-troll">Clique pas</button>
@@ -29,13 +31,11 @@ Affecte uniquement les éléments ayant la classe `shrek-troll`.
 <script src="https://shrek.charles-lindecker.com/dist/shrek.min.js"></script>
 ```
 
-👉 Dès que tu cliques sur un bouton `shrek-troll`, la page entière est remplacée par une vidéo de Shrek en fullscreen avec le son à fond.
+Usage recommande si tu veux garder un semblant de controle sur le niveau de nuisance.
 
----
+### 2. Mode total: `shrek-all.min.js`
 
-### 2. Version totale : `shrek-all.min.js`
-
-Affecte **tous les boutons et tous les liens** (`<button>` et `<a>`).
+Affecte tous les `<button>` et tous les `<a>` de la page.
 
 ```html
 <a href="#">Ne clique pas</a>
@@ -44,81 +44,81 @@ Affecte **tous les boutons et tous les liens** (`<button>` et `<a>`).
 <script src="https://shrek.charles-lindecker.com/dist/shrek-all.min.js"></script>
 ```
 
-👉 Ici, impossible d’y échapper : n’importe quel clic sur un bouton ou un lien déclenche Shrek.
-Parfait pour un chaos absolu 💚🎷
+Usage recommande si ton objectif est de ruiner une interface avec conviction.
 
----
+## Structure du projet
 
-## 🎞 Source vidéo
-
-Par défaut, la vidéo est servie depuis :
-
-```
-https://shrek.charles-lindecker.com/shrek.mp4
-```
-
----
-
-## 🗂 Structure
-
-```
-shrek-sophone/
-├── index.html           # La page principale
-├── src/                 # Code source organisé
-│   ├── lib/             # Fonctions génériques (DOM, vidéo)
-│   │   ├── dom.js
-│   │   └── video.js
-│   ├── shrek.js         # Version ciblée
-│   └── shrek-all.js     # Version chaos total
-├── dist/                # Builds minifiés pour le CDN
-│   ├── shrek.min.js
-│   └── shrek-all.min.js
-├── shrek.mp4            # La vidéo troll
-├── meta/                # Favicons & manifest
-├── test-github/         # Exemple via CDN GitHub Pages
-│   └── index.html
-└── test-vps/            # Exemple via CDN VPS (hexanti.fr)
-    └── index.html
+```text
+ShrekSophone/
+|-- index.html              # Landing page du projet
+|-- src/
+|   |-- img/
+|   |   `-- shrek.jpg       # Visuel de la page
+|   |-- lib/
+|   |   |-- dom.js          # Selection et interception des elements
+|   |   `-- video.js        # Creation de la video plein ecran
+|   |-- style/
+|   |   |-- input.css       # Source CSS
+|   |   `-- output.css      # CSS compile
+|   |-- shrek.js            # Version ciblee
+|   `-- shrek-all.js        # Version totale
+|-- dist/                   # Builds CDN minifies
+|-- meta/                   # Favicons et manifest
+|-- test-github/            # Exemple d'integration via GitHub Pages
+`-- test-vps/               # Exemple d'integration via VPS
 ```
 
----
+## Dev local
 
-## 🚀 Installation locale
-
-Si tu veux tester sans CDN :
+### Ouvrir le projet
 
 ```bash
 git clone https://github.com/LINDECKER-Charles/ShrekSophone.git
 cd ShrekSophone
-open index.html
 ```
 
----
+Puis ouvre `index.html` dans ton navigateur.
 
-## 🥝 Features
+### Recompiler le CSS
 
-* Shrek en plein écran
-* Un groove au saxophone inarrêtable
-* 200% troll, 0% utile
-* Version ciblée ou version chaos total
-* Fonctionne mieux qu’un café ☕
+```bash
+npx @tailwindcss/cli -i src/style/input.css -o src/style/output.css
+```
 
----
+Tres utile si tu touches au style. Beaucoup moins utile si tu veux juste deployer du chaos brut.
 
-## 🤝 Contribution
+## Comportement technique
 
-Envie d’ajouter plus de mèmes, d’animations, ou de musiques ridicules ?
-Les PR sont les bienvenues, mais sache que Shrek veille.
+- `src/shrek.js` cible `.shrek-troll`
+- `src/shrek-all.js` cible `button, a`
+- `src/lib/dom.js` neutralise les clics d'origine et remplace le contenu du `body`
+- `src/lib/video.js` construit la video fullscreen et lance la lecture
 
----
+Le projet est volontairement simple: pas de framework, pas de bundler obligatoire pour la page, pas de sur-ingenierie. Juste un concept discutable execute tres serieusement.
 
-## ⚙️ CI/CD
+## Pourquoi ce projet existe
 
-* Push sur **`dev`** → Lint + build + minification avec esbuild.
-* CI merge automatiquement `dev` → `main`.
-* `main` contient le code + les fichiers minifiés dans `dist/`.
-* CD déploie automatiquement sur le VPS [shrek.charles-lindecker.com](https://shrek.charles-lindecker.com).
+Excellente question. Plusieurs hypotheses:
 
----
+- pour tester rapidement un script CDN
+- pour troller des collegues avec une precision chirurgicale
+- pour honorer la culture web absurde comme il se doit
+- parce que "et si Shrek jouait du saxo sur mon site ?" est une phrase qui meritait une reponse
 
-*"SomeBODY once told me..."* mais ici, c’est plutôt **Saxo-body**. 🎷💚
+## Roadmap tres raisonnable
+
+- plus de variantes visuelles
+- options de configuration du lecteur
+- version encore plus douteuse
+
+## Contribution
+
+Les PR sont bienvenues si elles respectent au moins une de ces conditions:
+
+- elles rendent le projet plus propre
+- elles rendent le projet plus drole
+- elles rendent le projet plus absurde sans le rendre inutilement complique
+
+## Licence morale
+
+Fais-en bon usage, c'est-a-dire probablement un usage tres mauvais.
