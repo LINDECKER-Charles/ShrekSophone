@@ -85,8 +85,12 @@ const cases = [
       };
 
       const video = {
+        dataset: {
+          src: "https://shrek.charles-lindecker.com/shrek.mp4"
+        },
         muted: true,
         volume: 0,
+        load() {},
         play() {
           playCalls += 1;
         },
@@ -100,6 +104,7 @@ const cases = [
 
       assert.equal(globalThis.document.body.innerHTML, "");
       assert.equal(appendedNode, video);
+      assert.equal(video.src, "https://shrek.charles-lindecker.com/shrek.mp4");
       assert.equal(video.muted, false);
       assert.equal(video.volume, 1);
       assert.equal(playCalls, 1);
@@ -127,10 +132,13 @@ const cases = [
       assert.equal(createdElements.length, 1);
       assert.equal(createdElements[0], video);
       assert.equal(video.tagName, "video");
-      assert.equal(video.src, "https://shrek.charles-lindecker.com/shrek.mp4");
+      assert.deepEqual(video.dataset, {
+        src: "https://shrek.charles-lindecker.com/shrek.mp4"
+      });
       assert.equal(video.autoplay, true);
       assert.equal(video.loop, true);
       assert.equal(video.controls, false);
+      assert.equal(video.preload, "none");
       assert.equal(video.muted, true);
       assert.equal(video.volume, 0);
       assert.deepEqual(video.style, {

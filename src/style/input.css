@@ -1,5 +1,3 @@
-@import "tailwindcss";
-
 :root {
   --bg: #04130c;
   --bg-soft: rgba(9, 36, 24, 0.78);
@@ -69,11 +67,11 @@ body::after {
 html,
 body,
 body * {
-  cursor: url("../img/shrek_cursor_48.png") 12 12, auto;
+  cursor: url("../img/shrek_cursor_32.png") 8 8, auto;
 }
 
 .shrek-troll:hover {
-  cursor: url("../img/shrek_cursor_48.png") 12 12, grab;
+  cursor: url("../img/shrek_cursor_32.png") 8 8, grab;
 }
 
 .page-shell {
@@ -614,7 +612,7 @@ code {
   border-radius: 999px;
   background: rgba(15, 46, 29, 0.92);
   color: var(--text);
-  font-family: "Bungee", cursive;
+  font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
   font-size: 0.72rem;
   letter-spacing: 0.04em;
   transition:
