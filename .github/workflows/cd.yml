@@ -63,6 +63,8 @@ jobs:
           rsync -az --delete -e "ssh -i ~/.ssh/deploy_key" \
             index.html \
             shrek.mp4 \
+            robots.txt \
+            sitemap.xml \
             meta \
             src \
             root@"$DEPLOY_HOST":"${{ secrets.PATH_PROD }}/"
