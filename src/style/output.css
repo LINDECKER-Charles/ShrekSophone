@@ -195,7 +195,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: Inter, "Segoe UI", Arial, Helvetica, sans-serif;
   color: var(--text);
   background: radial-gradient(circle at top left, rgba(157, 255, 93, 0.16), transparent 35%), radial-gradient(circle at 80% 18%, rgba(255, 213, 75, 0.14), transparent 18%), radial-gradient(circle at bottom right, rgba(44, 165, 86, 0.22), transparent 30%), linear-gradient(135deg, #03110c 0%, #0c2617 45%, #12361f 100%);
   overflow-x: hidden;
@@ -351,7 +351,7 @@ main {
   margin: 0;
 }
 .hero-copy h1, .section-heading h2, .feature-card h2, .snippet-header h3, .button, .brand-mark {
-  font-family: "Bungee", cursive;
+  font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
 }
 .hero-copy h1 {
   font-size: clamp(2.8rem, 7vw, 5.8rem);
@@ -450,7 +450,7 @@ main {
   transform: rotate(4deg);
 }
 .badge, .feature-index, .snippet-pill, .floating-note {
-  font-family: "Bungee", cursive;
+  font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
 }
 .badge {
   position: absolute;
@@ -635,7 +635,7 @@ pre {
   line-height: 1.65;
 }
 code {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
 .snippet-code {
   position: relative;

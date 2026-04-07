@@ -33,31 +33,109 @@
   <link rel="apple-touch-icon" sizes="180x180" href="meta/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-title" content="Shreksophone">
   <link rel="manifest" href="meta/site.webmanifest">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;500;700&display=swap"
-    rel="stylesheet"
-  >
-  <link href="./src/style/output.css" rel="stylesheet">
+  <link rel="preload" href="./src/style/output.css" as="style">
+  <link rel="stylesheet" href="./src/style/output.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="./src/style/output.css"></noscript>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Shreksophone",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "Web",
-      "url": "https://shrek.charles-lindecker.com/",
-      "description": "Mini CDN troll qui remplace un clic par une video plein ecran de Shrek sur un solo de saxophone.",
-      "author": {
-        "@type": "Person",
-        "name": "Charles LINDECKER"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "EUR"
-      }
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://shrek.charles-lindecker.com/#website",
+          "url": "https://shrek.charles-lindecker.com/",
+          "name": "Shreksophone",
+          "description": "Le CDN le plus absurde du marais: un clic, un solo de saxo, Shrek en plein ecran.",
+          "inLanguage": "fr-FR",
+          "publisher": {
+            "@id": "https://shrek.charles-lindecker.com/#author"
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://shrek.charles-lindecker.com/#author",
+          "name": "Charles LINDECKER",
+          "url": "https://www.linkedin.com/in/charles-lindecker"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://shrek.charles-lindecker.com/#app",
+          "name": "Shreksophone",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Web",
+          "url": "https://shrek.charles-lindecker.com/",
+          "image": "https://shrek.charles-lindecker.com/src/img/1024x1044_shrek-4-upscale.jpg",
+          "description": "Mini CDN troll qui remplace un clic par une video plein ecran de Shrek sur un solo de saxophone.",
+          "author": {
+            "@id": "https://shrek.charles-lindecker.com/#author"
+          },
+          "isPartOf": {
+            "@id": "https://shrek.charles-lindecker.com/#website"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://shrek.charles-lindecker.com/#webpage",
+          "url": "https://shrek.charles-lindecker.com/",
+          "name": "Shreksophone",
+          "isPartOf": {
+            "@id": "https://shrek.charles-lindecker.com/#website"
+          },
+          "about": {
+            "@id": "https://shrek.charles-lindecker.com/#app"
+          },
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://shrek.charles-lindecker.com/src/img/1024x1044_shrek-4-upscale.jpg"
+          },
+          "description": "Landing page officielle du projet Shreksophone."
+        }
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce que Shreksophone ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Shreksophone est un mini CDN troll qui transforme un clic en video plein ecran de Shrek sur un solo de saxophone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelle difference entre shrek.min.js et shrek-all.min.js ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "shrek.min.js cible uniquement les elements avec la classe shrek-troll, alors que shrek-all.min.js intercepte tous les boutons et liens."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Shreksophone est-il gratuit ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Le projet est accessible gratuitement et peut etre utilise tel quel via le CDN public."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Peut-on tester la demo avant integration ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. La landing propose un apercu et des snippets de code pour tester le comportement avant integration."
+          }
+        }
+      ]
     }
   </script>
 </head>

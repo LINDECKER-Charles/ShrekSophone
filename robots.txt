@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shrek.charles-lindecker.com/sitemap.xml
