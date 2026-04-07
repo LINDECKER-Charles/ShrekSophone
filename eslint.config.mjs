@@ -1,6 +1,9 @@
 // eslint.config.js
 export default [
   {
+    ignores: [".generated/**", "dist/**", "node_modules/**"]
+  },
+  {
     files: ["**/*.js"],
     languageOptions: {
       ecmaVersion: "latest",
