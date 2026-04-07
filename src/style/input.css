@@ -66,13 +66,14 @@ body::after {
   animation: driftB 18s ease-in-out infinite alternate;
 }
 
-a,
-button {
-  cursor: url("https://cur.cursors-4u.net/others/oth-9/oth845.cur"), pointer;
+html,
+body,
+body * {
+  cursor: url("../img/shrek_cursor_48.png") 12 12, auto;
 }
 
 .shrek-troll:hover {
-  cursor: url("https://shrek.hexanti.fr/meta/shrek-cursor.png") 16 16, grab;
+  cursor: url("../img/shrek_cursor_48.png") 12 12, grab;
 }
 
 .page-shell {
