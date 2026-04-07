@@ -8,6 +8,25 @@
     name="description"
     content="Le CDN le plus absurde du marais: un clic, un solo de saxo, Shrek en plein ecran."
   >
+
+  <meta name="google-site-verification" content="8ktW_VNmaBZquKlGxRbpspq5KO7jrgMHQ3hH1asr06s" />
+
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="author" content="Charles LINDECKER">
+  <meta name="theme-color" content="#0c2617">
+  <link rel="canonical" href="https://shrek.charles-lindecker.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Shreksophone">
+  <meta property="og:title" content="Shreksophone">
+  <meta property="og:description" content="Le CDN le plus absurde du marais: un clic, un solo de saxo, Shrek en plein ecran.">
+  <meta property="og:url" content="https://shrek.charles-lindecker.com/">
+  <meta property="og:image" content="https://shrek.charles-lindecker.com/src/img/1024x1044_shrek-4-upscale.jpg">
+  <meta property="og:image:alt" content="Portrait dramatique de Shrek pour la landing Shreksophone">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shreksophone">
+  <meta name="twitter:description" content="Un clic, un solo de saxo, et ton site bascule dans le marais.">
+  <meta name="twitter:image" content="https://shrek.charles-lindecker.com/src/img/1024x1044_shrek-4-upscale.jpg">
   <link rel="icon" type="image/png" href="meta/favicon-96x96.png" sizes="96x96">
   <link rel="icon" type="image/svg+xml" href="meta/favicon.svg">
   <link rel="shortcut icon" href="meta/favicon.ico">
@@ -21,12 +40,44 @@
     rel="stylesheet"
   >
   <link href="./src/style/output.css" rel="stylesheet">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Shreksophone",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web",
+      "url": "https://shrek.charles-lindecker.com/",
+      "description": "Mini CDN troll qui remplace un clic par une video plein ecran de Shrek sur un solo de saxophone.",
+      "author": {
+        "@type": "Person",
+        "name": "Charles LINDECKER"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      }
+    }
+  </script>
 </head>
 <body>
   <div class="page-shell">
     <header class="topbar">
       <a class="brand-mark" href="#top">Shrek.exe</a>
-      <nav class="topnav" aria-label="Navigation principale">
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="Ouvrir le menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="topnav" id="site-nav" aria-label="Navigation principale">
         <a href="#demo">Demo</a>
         <a href="#cdn">CDN</a>
         <a href="#liens">Liens</a>
@@ -67,7 +118,37 @@
         <div class="hero-stage">
           <div class="hero-card">
             <span class="badge">Version 2026 du mauvais gout controle</span>
-            <img src="./src/img/shrek.jpg" alt="Portrait dramatique de Shrek" class="hero-image">
+            <picture>
+              <source
+                type="image/webp"
+                srcset="
+                  ./src/img/320x326_shrek-4-upscale.webp 320w,
+                  ./src/img/640x653_shrek-4-upscale.webp 640w,
+                  ./src/img/768x783_shrek-4-upscale.webp 768w,
+                  ./src/img/1024x1044_shrek-4-upscale.webp 1024w
+                "
+                sizes="(max-width: 980px) 100vw, (max-width: 1200px) 35vw, 420px"
+              >
+              <source
+                type="image/jpeg"
+                srcset="
+                  ./src/img/320x326_shrek-4-upscale.jpg 320w,
+                  ./src/img/640x653_shrek-4-upscale.jpg 640w,
+                  ./src/img/768x783_shrek-4-upscale.jpg 768w,
+                  ./src/img/1024x1044_shrek-4-upscale.jpg 1024w
+                "
+                sizes="(max-width: 980px) 100vw, (max-width: 1200px) 35vw, 420px"
+              >
+              <img
+                src="./src/img/640x653_shrek-4-upscale.jpg"
+                alt="Portrait dramatique de Shrek"
+                class="hero-image"
+                width="640"
+                height="653"
+                fetchpriority="high"
+                decoding="async"
+              >
+            </picture>
             <div class="hero-card-footer">
               <p>Sujet d'etude: disruption sonore non sollicitee.</p>
               <button class="shrek-troll button button-secondary" type="button">Ne teste surtout pas</button>
@@ -106,11 +187,40 @@
           </p>
         </div>
 
-        <div class="media-card">
-          <video controls loop muted playsinline poster="./src/img/shrek.jpg">
-            <source src="https://shrek.charles-lindecker.com/shrek.mp4" type="video/mp4">
-            Ton navigateur refuse visiblement la gloire.
-          </video>
+        <div class="media-card media-stack">
+          <button class="demo-launch" id="load-demo-video" type="button" aria-label="Charger la demo video">
+            <picture>
+              <source
+                type="image/webp"
+                srcset="
+                  ./src/img/320x243_shrek-3-upscale.webp 320w,
+                  ./src/img/640x487_shrek-3-upscale.webp 640w,
+                  ./src/img/768x584_shrek-3-upscale.webp 768w,
+                  ./src/img/1024x779_shrek-3-upscale.webp 1024w
+                "
+                sizes="(max-width: 980px) 100vw, 48vw"
+              >
+              <source
+                type="image/jpeg"
+                srcset="
+                  ./src/img/320x243_shrek-3-upscale.jpg 320w,
+                  ./src/img/640x487_shrek-3-upscale.jpg 640w,
+                  ./src/img/768x584_shrek-3-upscale.jpg 768w,
+                  ./src/img/1024x779_shrek-3-upscale.jpg 1024w
+                "
+                sizes="(max-width: 980px) 100vw, 48vw"
+              >
+              <img
+                src="./src/img/640x487_shrek-3-upscale.jpg"
+                alt="Apercu de la demo video Shreksophone"
+                class="demo-cover"
+                width="640"
+                height="487"
+                decoding="async"
+              >
+            </picture>
+            <span class="demo-play">Charger la demo video</span>
+          </button>
         </div>
       </section>
 
@@ -171,6 +281,10 @@
           <span>frontend pas tres responsable</span>
           <span>plug and prank</span>
           <span>saxo as a service</span>
+          <span>approved by swamp ops</span>
+          <span>frontend pas tres responsable</span>
+          <span>plug and prank</span>
+          <span>saxo as a service</span>
         </div>
       </section>
 
@@ -207,6 +321,42 @@
   </div>
 
   <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const siteNav = document.getElementById("site-nav");
+
+    if (menuToggle && siteNav) {
+      menuToggle.addEventListener("click", () => {
+        const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!isOpen));
+        siteNav.classList.toggle("is-open", !isOpen);
+      });
+
+      siteNav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuToggle.setAttribute("aria-expanded", "false");
+          siteNav.classList.remove("is-open");
+        });
+      });
+    }
+
+    const demoVideoButton = document.getElementById("load-demo-video");
+
+    if (demoVideoButton) {
+      demoVideoButton.addEventListener("click", () => {
+        const video = document.createElement("video");
+        video.controls = true;
+        video.loop = true;
+        video.muted = true;
+        video.playsInline = true;
+        video.preload = "metadata";
+        video.className = "demo-video";
+        video.src = "https://shrek.charles-lindecker.com/shrek.mp4";
+
+        demoVideoButton.replaceWith(video);
+        video.play().catch(() => {});
+      });
+    }
+
     document.querySelectorAll("[data-copy-target]").forEach((button) => {
       button.addEventListener("click", async () => {
         const targetId = button.getAttribute("data-copy-target");
@@ -234,6 +384,6 @@
     }
   </script>
 
-  <script src="https://shrek.charles-lindecker.com/dist/shrek.min.js"></script>
+  <script defer src="https://shrek.charles-lindecker.com/dist/shrek.min.js"></script>
 </body>
 </html>
