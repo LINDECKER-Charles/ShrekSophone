@@ -2,140 +2,238 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>:)</title>
-  <!-- Favicons -->
-  <link rel="icon" type="image/png" href="meta/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="meta/favicon.svg" />
-  <link rel="shortcut icon" href="meta/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="meta/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="MyWebSite" />
-  <link rel="manifest" href="meta/site.webmanifest" />
-
-  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Orbitron:wght@700&display=swap" rel="stylesheet">
-  <style>
-    h1, h2, h3 {
-      font-family: 'Orbitron', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    body {
-      font-family: 'VT323', monospace;
-      font-size: 19px;
-      line-height: 1.5;
-    }
-  </style>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shreksophone</title>
+  <meta
+    name="description"
+    content="Le CDN le plus absurde du marais: un clic, un solo de saxo, Shrek en plein ecran."
+  >
+  <link rel="icon" type="image/png" href="meta/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="meta/favicon.svg">
+  <link rel="shortcut icon" href="meta/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="meta/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="Shreksophone">
+  <link rel="manifest" href="meta/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  >
   <link href="./src/style/output.css" rel="stylesheet">
 </head>
-<body class="min-h-screen bg-gradient-to-b from-emerald-800 via-green-900 to-emerald-950 text-green-100 font-mono flex flex-col">
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand-mark" href="#top">Shrek.exe</a>
+      <nav class="topnav" aria-label="Navigation principale">
+        <a href="#demo">Demo</a>
+        <a href="#cdn">CDN</a>
+        <a href="#liens">Liens</a>
+      </nav>
+    </header>
 
-  <!-- HEADER -->
-  <header class="text-center py-10 border-b border-green-700">
-    <h1 class="text-5xl font-bold tracking-wider mb-2">🐸 Shreksophone</h1>
-    <p class="text-green-300 text-lg italic">Le seul CDN qui fait swinguer ton site web 🪗</p>
-  </header>
+    <main id="top">
+      <section class="hero-panel">
+        <div class="hero-copy">
+          <span class="eyebrow">Meme-tech premium du marais</span>
+          <h1>Le bouton qui ruine une interface avec panache.</h1>
+          <p class="lead">
+            Shreksophone transforme un clic banal en apparition plein ecran de Shrek
+            sur solo de saxophone. C'est inutile, excessif, et donc tres important.
+          </p>
 
-  <!-- HERO SECTION -->
-  <section class="flex flex-col items-center justify-center text-center mt-10 px-4">
-    <p class="section-desc">
-      Bienvenue dans le projet le plus inutile, et donc le plus essentiel, de tout GitHub.<br>
-      Shreksophone est un CDN troll qui transforme n’importe quel bouton ou lien en 
-      <span class="text-green-400 font-semibold">Shrek dansant sur un solo de saxophone magique ✨</span>.
-      Parfait pour perturber vos collègues, tester la patience de vos amis, ou simplement honorer le marais.
-    </p>
-    <img src="./src/img/shrek.jpg" alt="Shrek avec un regard de braise" class="w-64 h-auto rounded-2xl shadow-2xl border-4 border-green-700 mb-8">
-  </section>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#cdn">Declencher le chaos</a>
+            <a class="button button-ghost" href="#demo">Voir l'apercu</a>
+          </div>
 
-  <!-- VIDEO PREVIEW -->
-  <section class="flex flex-col items-center mt-12 px-4">
-    <h2 class="section-title">🎥 Vidéo</h2>
-    <video controls loop muted class="rounded-xl shadow-lg w-full max-w-3xl border-2 border-green-700">
-      <source src="https://shrek.charles-lindecker.com/shrek.mp4" type="video/mp4">
-      Ton navigateur ne supporte pas la vidéo... même Shrek est triste 🪦
-    </video>
-  </section>
+          <ul class="hero-stats" aria-label="Atouts du projet">
+            <li>
+              <strong>2 modes</strong>
+              <span>cible ou chaos total</span>
+            </li>
+            <li>
+              <strong>1 clic</strong>
+              <span>et ton site oublie la dignite</span>
+            </li>
+            <li>
+              <strong>100%</strong>
+              <span>groove certifie marais</span>
+            </li>
+          </ul>
+        </div>
 
-  <!-- BUTTONS SECTION -->
-  <section class="flex flex-wrap justify-center gap-6 mt-12">
-    <button class="shrek-troll btn-shrek">⚠️ Clique pas ici</button>
-    <button class="shrek-troll btn-shrek">💢 Encore un</button>
-    <button class="shrek-troll btn-shrek">🫠 Tu vas le regretter</button>
-  </section>
+        <div class="hero-stage">
+          <div class="hero-card">
+            <span class="badge">Version 2026 du mauvais gout controle</span>
+            <img src="./src/img/shrek.jpg" alt="Portrait dramatique de Shrek" class="hero-image">
+            <div class="hero-card-footer">
+              <p>Sujet d'etude: disruption sonore non sollicitee.</p>
+              <button class="shrek-troll button button-secondary" type="button">Ne teste surtout pas</button>
+            </div>
+          </div>
+          <div class="floating-note floating-note-a">sax boost</div>
+          <div class="floating-note floating-note-b">swamp certified</div>
+        </div>
+      </section>
 
-  <!-- CDN SECTION -->
-  <section class="section-container">
-    <h2 class="section-title">🧩 Utilisation en CDN</h2>
-    <p class="section-desc">
-      Choisis ton niveau de chaos. Copie, colle, et laisse Shrek envahir ton site 💫<br>
-      Disponible via le <span class="text-green-400 font-semibold">CDN officiel</span> ou directement sur GitHub Pages.
-    </p>
+      <section class="feature-grid" aria-label="Valeur produit totalement discutable">
+        <article class="feature-card">
+          <span class="feature-index">01</span>
+          <h2>Un troll propre</h2>
+          <p>Tu greffes juste un script. Pas besoin de framework, pas besoin de rituel occulte.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-index">02</span>
+          <h2>Une reaction immediate</h2>
+          <p>Bouton clique, page remplacee, plein ecran lance. Le sabotage est net et sans bavure.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-index">03</span>
+          <h2>Une vibe assumee</h2>
+          <p>Le projet ne cherche pas a paraitre serieux. Il cherche a etre memorable, et il y arrive.</p>
+        </article>
+      </section>
 
-    <!-- Version ciblée -->
-    <div class="card-shrek max-w-3xl mx-auto mb-10 text-left">
-      <h3 class="text-2xl font-semibold text-green-300 mb-3">🎯 Version ciblée – <code>shrek.min.js</code></h3>
-      <p class="text-green-200 mb-4">
-        Affecte uniquement les éléments avec la classe <code class="text-green-400">shrek-troll</code>.
-      </p>
-      <pre class="bg-green-950 text-green-100 p-4 rounded-lg overflow-x-auto text-sm">
-&lt;button class="shrek-troll"&gt;Clique pas&lt;/button&gt;
+      <section class="split-panel" id="demo">
+        <div class="section-heading">
+          <span class="eyebrow">Apercu</span>
+          <h2>Visualise la catastrophe avant de la deployer.</h2>
+          <p>
+            Une petite previsualisation pour jauger le potentiel de nuisance avant
+            de l'injecter dans l'environnement d'un collegue innocent.
+          </p>
+        </div>
+
+        <div class="media-card">
+          <video controls loop muted playsinline poster="./src/img/shrek.jpg">
+            <source src="https://shrek.charles-lindecker.com/shrek.mp4" type="video/mp4">
+            Ton navigateur refuse visiblement la gloire.
+          </video>
+        </div>
+      </section>
+
+      <section class="button-lab" aria-label="Boutons de test">
+        <button class="shrek-troll button button-secondary" type="button">Clique pas ici</button>
+        <button class="shrek-troll button button-secondary" type="button">Encore un bouton douteux</button>
+        <button class="shrek-troll button button-secondary" type="button">Tu vas le regretter</button>
+      </section>
+
+      <section class="code-section" id="cdn">
+        <div class="section-heading section-heading-compact">
+          <span class="eyebrow">CDN</span>
+          <h2>Choisis ton niveau de chaos.</h2>
+          <p>
+            Version ciblee pour les elements consentants, ou version totale pour
+            un environnement entierement compromis.
+          </p>
+        </div>
+
+        <div class="snippet-grid">
+          <article class="snippet-card">
+            <div class="snippet-header">
+              <span class="snippet-pill">Mode precis</span>
+              <h3><code>shrek.min.js</code></h3>
+            </div>
+            <p>Affecte uniquement les elements avec la classe <code>shrek-troll</code>.</p>
+            <div class="snippet-code">
+              <button class="copy-chip" type="button" data-copy-target="target-snippet" aria-label="Copier le snippet cible">Copier</button>
+              <pre id="target-snippet"><code>&lt;button class="shrek-troll"&gt;Clique pas&lt;/button&gt;
 &lt;button class="shrek-troll"&gt;Moi non plus&lt;/button&gt;
 
-&lt;script src="https://shrek.charles-lindecker.com/dist/shrek.min.js"&gt;&lt;/script&gt;
-      </pre>
-      <button onclick="copySnippet('target-snippet')" id="copy-target" class="copy-btn">
-        📋 Copier le code
-      </button>
-    </div>
+&lt;script src="https://shrek.charles-lindecker.com/dist/shrek.min.js"&gt;&lt;/script&gt;</code></pre>
+            </div>
+          </article>
 
-    <!-- Version chaos total -->
-    <div class="card-shrek max-w-3xl mx-auto text-left">
-      <h3 class="text-2xl font-semibold text-green-300 mb-3">💥 Version totale – <code>shrek-all.min.js</code></h3>
-      <p class="text-green-200 mb-4">
-        Affecte <strong>tous les boutons et liens</strong> (<code>&lt;button&gt;</code> et <code>&lt;a&gt;</code>).
-      </p>
-      <pre class="bg-green-950 text-green-100 p-4 rounded-lg overflow-x-auto text-sm">
-&lt;a href="#"&gt;Ne clique pas&lt;/a&gt;
+          <article class="snippet-card">
+            <div class="snippet-header">
+              <span class="snippet-pill snippet-pill-alt">Mode panique</span>
+              <h3><code>shrek-all.min.js</code></h3>
+            </div>
+            <p>Affecte tous les <code>&lt;button&gt;</code> et tous les <code>&lt;a&gt;</code>.</p>
+            <div class="snippet-code">
+              <button class="copy-chip" type="button" data-copy-target="all-snippet" aria-label="Copier le snippet complet">Copier</button>
+              <pre id="all-snippet"><code>&lt;a href="#"&gt;Ne clique pas&lt;/a&gt;
 &lt;button&gt;Moi non plus&lt;/button&gt;
 
-&lt;script src="https://shrek.charles-lindecker.com/dist/shrek-all.min.js"&gt;&lt;/script&gt;
-      </pre>
-      <button onclick="copySnippet('all-snippet')" id="copy-all" class="copy-btn">
-        📋 Copier le code
-      </button>
-    </div>
-  </section>
+&lt;script src="https://shrek.charles-lindecker.com/dist/shrek-all.min.js"&gt;&lt;/script&gt;</code></pre>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="marquee-panel" aria-label="Promesses commerciales contestables">
+        <div class="marquee-track">
+          <span>plug and prank</span>
+          <span>saxo as a service</span>
+          <span>approved by swamp ops</span>
+          <span>frontend pas tres responsable</span>
+          <span>plug and prank</span>
+          <span>saxo as a service</span>
+        </div>
+      </section>
+
+      <section class="links-panel" id="liens">
+        <div class="section-heading section-heading-compact">
+          <span class="eyebrow">Liens utiles</span>
+          <h2>Le coin officiel du marais.</h2>
+        </div>
+
+        <div class="link-grid">
+          <a href="https://github.com/LINDECKER-Charles/ShrekSophone" target="_blank" rel="noreferrer">
+            <strong>Repo GitHub</strong>
+            <span>Code source et historique des betises</span>
+          </a>
+          <a href="mailto:charles.lindecker@outlook.fr">
+            <strong>Contact</strong>
+            <span>Pour les questions serieuses ou les idees discutables</span>
+          </a>
+          <a href="https://github.com/LINDECKER-Charles" target="_blank" rel="noreferrer">
+            <strong>Profil GitHub</strong>
+            <span>Autres projets plus ou moins sous controle</span>
+          </a>
+          <a href="https://www.linkedin.com/in/charles-lindecker" target="_blank" rel="noreferrer">
+            <strong>LinkedIn</strong>
+            <span>Version socialement acceptable de l'auteur</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>(c) <span id="current-year">2026</span> Charles LINDECKER. Code avec panache, chaos et humidite ambiante.</p>
+    </footer>
+  </div>
 
   <script>
-    function copySnippet(id) {
-      const pre = event.target.previousElementSibling;
-      const text = pre.innerText;
-      navigator.clipboard.writeText(text);
-      event.target.textContent = "✅ Copié !";
-      event.target.classList.add("bg-emerald-600");
-      setTimeout(() => {
-        event.target.textContent = "📋 Copier le code";
-        event.target.classList.remove("bg-emerald-600");
-      }, 2000);
+    document.querySelectorAll("[data-copy-target]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const targetId = button.getAttribute("data-copy-target");
+        const target = document.getElementById(targetId);
+        if (!target) return;
+
+        try {
+          await navigator.clipboard.writeText(target.innerText.trim());
+          const previousText = button.textContent;
+          button.textContent = "Copie";
+          button.classList.add("is-copied");
+          window.setTimeout(() => {
+            button.textContent = previousText;
+            button.classList.remove("is-copied");
+          }, 1800);
+        } catch (error) {
+          console.error("Impossible de copier le snippet", error);
+        }
+      });
+    });
+
+    const yearNode = document.getElementById("current-year");
+    if (yearNode) {
+      yearNode.textContent = new Date().getFullYear();
     }
   </script>
 
-  <!-- LINKS -->
-  <section class="mt-16 text-center px-4">
-    <h2 class="text-2xl font-bold text-green-300 mb-4">🕸️ Liens utiles</h2>
-    <div class="flex flex-wrap justify-center gap-6 text-green-200 text-lg">
-      <a href="https://github.com/LINDECKER-Charles/ShrekSophone" target="_blank" class="hover:text-green-400 underline">📦 Repo GitHub</a>
-      <a href="mailto:charles.lindecker@outlook.fr" class="hover:text-green-400 underline">✉️ Contact</a>
-      <a href="https://github.com/LINDECKER-Charles" target="_blank" class="hover:text-green-400 underline">🧠 Mon GitHub</a>
-      <a href="https://www.linkedin.com/in/charles-lindecker" target="_blank" class="hover:text-green-400 underline">🏹 Mon LinkedIn</a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="mt-16 py-8 text-center border-t border-green-700 text-green-400 text-sm opacity-70">
-    © 2025 HexAnti – Codé avec passion, chaos et marécage 🌿🪞
-  </footer>
-
-  <!-- Plugin Shrek -->
   <script src="https://shrek.charles-lindecker.com/dist/shrek.min.js"></script>
 </body>
 </html>
