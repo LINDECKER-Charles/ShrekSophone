@@ -25,7 +25,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: Inter, "Segoe UI", Arial, Helvetica, sans-serif;
   color: var(--text);
   background:
     radial-gradient(circle at top left, rgba(157, 255, 93, 0.16), transparent 35%),
@@ -236,7 +236,7 @@ main {
 .snippet-header h3,
 .button,
 .brand-mark {
-  font-family: "Bungee", cursive;
+  font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
 }
 
 .hero-copy h1 {
@@ -363,7 +363,7 @@ main {
 .feature-index,
 .snippet-pill,
 .floating-note {
-  font-family: "Bungee", cursive;
+  font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
 }
 
 .badge {
@@ -587,7 +587,7 @@ pre {
 }
 
 code {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
 .snippet-code {
