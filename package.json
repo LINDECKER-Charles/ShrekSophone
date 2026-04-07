@@ -1,6 +1,18 @@
 {
+  "type": "module",
+  "scripts": {
+    "lint": "eslint . --ext .js --max-warnings=0",
+    "test": "node tests/run-tests.mjs",
+    "build:css": "npx @tailwindcss/cli -i src/style/input.css -o src/style/output.css",
+    "build:js": "node scripts/build-js.mjs",
+    "build": "npm run build:css && npm run build:js"
+  },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.14",
     "tailwindcss": "^4.1.14"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.0",
+    "eslint": "^10.2.0"
   }
 }
