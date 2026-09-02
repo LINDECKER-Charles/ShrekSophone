@@ -1,7 +1,7 @@
 // eslint.config.js
 export default [
   {
-    ignores: [".generated/**", "dist/**", "node_modules/**"]
+    ignores: ["dist/**", "_site/**", "node_modules/**"]
   },
   {
     files: ["**/*.js"],
