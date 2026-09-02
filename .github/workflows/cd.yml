@@ -2,7 +2,6 @@ name: CD
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-  DEPLOY_HOST: league-of-data-base.fr
 
 on:
   workflow_run:
@@ -14,15 +13,19 @@ on:
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
 
 concurrency:
-  group: production-deploy
-  cancel-in-progress: true
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: production
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     if: >
       github.event_name == 'workflow_dispatch' ||
       (
@@ -33,6 +36,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
+        with:
+          ref: main
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
@@ -46,32 +51,26 @@ jobs:
       - name: Build deployable assets
         run: npm run build
 
-      - name: Configure SSH key
+      - name: Assemble site
         run: |
-          mkdir -p ~/.ssh
-          printf '%s\n' "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/deploy_key
-          chmod 600 ~/.ssh/deploy_key
+          rm -rf _site
+          mkdir -p _site/dist _site/src/style
+          cp index.html robots.txt sitemap.xml shrek.mp4 _site/
+          cp -R meta _site/meta
+          cp -R src/img _site/src/img
+          cp src/style/output.css _site/src/style/output.css
+          cp dist/shrek.min.js dist/shrek-all.min.js _site/dist/
+          touch _site/.nojekyll
+          du -sh _site
 
-      - name: Register deployment host
-        run: ssh-keyscan -H "$DEPLOY_HOST" >> ~/.ssh/known_hosts
+      - name: Configure Pages
+        uses: actions/configure-pages@v6
 
-      - name: Ensure target directory exists
-        run: ssh -i ~/.ssh/deploy_key root@"$DEPLOY_HOST" "mkdir -p '${{ secrets.PATH_PROD }}' '${{ secrets.PATH_PROD }}/dist'"
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
 
-      - name: Sync site to production
-        run: |
-          rsync -az --delete -e "ssh -i ~/.ssh/deploy_key" \
-            index.html \
-            shrek.mp4 \
-            robots.txt \
-            sitemap.xml \
-            meta \
-            src \
-            root@"$DEPLOY_HOST":"${{ secrets.PATH_PROD }}/"
-
-          rsync -az --delete -e "ssh -i ~/.ssh/deploy_key" \
-            .generated/dist/ \
-            root@"$DEPLOY_HOST":"${{ secrets.PATH_PROD }}/dist/"
-
-      - name: Reload Apache
-        run: ssh -i ~/.ssh/deploy_key root@"$DEPLOY_HOST" "systemctl reload apache2"
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

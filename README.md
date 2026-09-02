@@ -4,11 +4,11 @@
 
 ### Un clic. Un saxo. Plus aucun respect pour l'interface.
 
-[![Production](https://img.shields.io/badge/production-online-88d942?style=for-the-badge)](https://shrek.charles-lindecker.com)
+[![Production](https://img.shields.io/badge/production-github_pages-88d942?style=for-the-badge)](https://lindecker-charles.github.io/ShrekSophone/)
 [![Repository](https://img.shields.io/badge/github-ShrekSophone-1f6feb?style=for-the-badge)](https://github.com/LINDECKER-Charles/ShrekSophone)
-[![Chaos Level](https://img.shields.io/badge/chaos-certified_swamp-3c8d2f?style=for-the-badge)](https://shrek.charles-lindecker.com)
+[![CDN](https://img.shields.io/badge/cdn-temporairement_desactive-ffb020?style=for-the-badge)](#cdn-public-temporairement-desactive)
 
-**Production:** [shrek.charles-lindecker.com](https://shrek.charles-lindecker.com)
+**Production:** [lindecker-charles.github.io/ShrekSophone](https://lindecker-charles.github.io/ShrekSophone/)
 
 </div>
 
@@ -32,7 +32,7 @@ En pratique:
 
 | Ressource | Lien |
 |---|---|
-| Site en production | [shrek.charles-lindecker.com](https://shrek.charles-lindecker.com) |
+| Site en production | [lindecker-charles.github.io/ShrekSophone](https://lindecker-charles.github.io/ShrekSophone/) |
 | Repository GitHub | [LINDECKER-Charles/ShrekSophone](https://github.com/LINDECKER-Charles/ShrekSophone) |
 | Auteur | [Charles LINDECKER](https://www.linkedin.com/in/charles-lindecker) |
 
@@ -62,7 +62,24 @@ incident produit
 
 ---
 
+## CDN public temporairement desactive
+
+Le CDN public n'est plus distribue pour le moment. L'infrastructure a quitte le VPS
+pour GitHub Pages, et les snippets d'integration sont retires du site le temps que
+tout soit stabilise. Ca revient bientot.
+
+En attendant:
+
+- le site de demo fonctionne normalement, boutons trolls compris
+- le code source reste ouvert et reutilisable (Apache-2.0)
+- rien ne t'empeche de builder les scripts toi-meme avec `npm run build`
+
+---
+
 ## Modes disponibles
+
+Les deux modes existent toujours dans le code, ils ne sont juste plus servis
+publiquement.
 
 ### Mode cible
 
@@ -74,7 +91,7 @@ N'affecte que les elements avec la classe `shrek-troll`.
 <button class="shrek-troll">Clique pas</button>
 <button class="shrek-troll">Moi non plus</button>
 
-<script src="https://shrek.charles-lindecker.com/dist/shrek.min.js"></script>
+<script src="dist/shrek.min.js"></script>
 ```
 
 **Quand l'utiliser:** si tu veux garder un semblant de controle sur le niveau de nuisance.
@@ -89,7 +106,7 @@ Affecte tous les `<button>` et tous les `<a>` de la page.
 <a href="#">Ne clique pas</a>
 <button>Moi non plus</button>
 
-<script src="https://shrek.charles-lindecker.com/dist/shrek-all.min.js"></script>
+<script src="dist/shrek-all.min.js"></script>
 ```
 
 **Quand l'utiliser:** si ton objectif est de ruiner une interface avec conviction.
@@ -100,9 +117,10 @@ Affecte tous les `<button>` et tous les `<a>` de la page.
 
 Le site de demo en production est ici:
 
-## [shrek.charles-lindecker.com](https://shrek.charles-lindecker.com)
+## [lindecker-charles.github.io/ShrekSophone](https://lindecker-charles.github.io/ShrekSophone/)
 
-Tu peux aussi ouvrir `index.html` en local pour admirer le desastre sans passer par le CDN public.
+Tu peux aussi lancer `npm run build` puis ouvrir `index.html` en local pour admirer
+le desastre sans quitter ta machine.
 
 ---
 
@@ -121,10 +139,11 @@ ShrekSophone/
 |   |   `-- output.css      # CSS compile
 |   |-- shrek.js            # Version ciblee
 |   `-- shrek-all.js        # Version totale
-|-- dist/                   # Builds CDN minifies en production
+|-- dist/                   # Builds minifies, generes par npm run build (non versionne)
 |-- meta/                   # Favicons, manifest et assets SEO
 |-- scripts/                # Scripts de build
 |-- tests/                  # Tests du coeur du projet
+|-- test-github/            # Page de test hors site pour le script publie
 |-- sitemap.xml
 `-- robots.txt
 ```
@@ -187,8 +206,14 @@ lint + tests + build
    ↓
 promotion vers main
    ↓
-deploiement automatique en production
+build du dossier _site
+   ↓
+deploiement sur GitHub Pages
 ```
+
+L'hebergement est entierement sur GitHub Pages: page, styles, images, scripts
+minifies et video sont servis depuis le meme artefact, construit par la CI. Aucun
+serveur a maintenir, aucune cle SSH a faire tourner.
 
 Autrement dit: meme le chaos est deploye avec methode.
 
@@ -206,7 +231,7 @@ Les PR sont bienvenues si elles respectent au moins une de ces conditions:
 
 ## Licence morale
 
-Le projet est distribue sous licence Apache-2.0 avec fichier [NOTICE](F:\Git\ShrekSophone\NOTICE) d'attribution.
+Le projet est distribue sous licence Apache-2.0 avec fichier [NOTICE](NOTICE) d'attribution.
 
 En clair:
 

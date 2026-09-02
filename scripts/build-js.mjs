@@ -2,8 +2,8 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 
 const sharedModules = ["src/lib/video.js", "src/lib/dom.js"];
 const entryPoints = [
-  { input: "src/shrek.js", output: ".generated/dist/shrek.min.js" },
-  { input: "src/shrek-all.js", output: ".generated/dist/shrek-all.min.js" }
+  { input: "src/shrek.js", output: "dist/shrek.min.js" },
+  { input: "src/shrek-all.js", output: "dist/shrek-all.min.js" }
 ];
 
 function stripModuleSyntax(source) {
@@ -21,7 +21,7 @@ function compact(source) {
     .trim();
 }
 
-await mkdir(".generated/dist", { recursive: true });
+await mkdir("dist", { recursive: true });
 
 const sharedSourceParts = [];
 for (const modulePath of sharedModules) {

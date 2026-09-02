@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shrek.charles-lindecker.com/sitemap.xml
+Sitemap: https://lindecker-charles.github.io/ShrekSophone/sitemap.xml
