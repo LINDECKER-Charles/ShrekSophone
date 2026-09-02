@@ -1,7 +1,7 @@
 export function loadvideo(){
     const vid = document.createElement("video");
     vid.dataset ||= {};
-    vid.dataset.src = "https://shrek.charles-lindecker.com/shrek.mp4";
+    vid.dataset.src = "https://lindecker-charles.github.io/ShrekSophone/shrek.mp4";
     vid.autoplay = true;
     vid.loop = true;
     vid.controls = false;
